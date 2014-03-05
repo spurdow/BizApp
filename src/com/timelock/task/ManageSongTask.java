@@ -7,6 +7,8 @@ import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
 import com.google.gson.Gson;
+import com.timelock.bizapp.ManageSongList;
+import com.timelock.iface.DisplaySongCallback;
 import com.timelock.serializedentity.SerializedManageSongs;
 import com.timelock.utils.Utils;
 
@@ -18,8 +20,10 @@ public class ManageSongTask extends AsyncTask<String , String , String>{
 
 	private static final String TAG = "ManageSongTask";
 	private Context context;
-	public ManageSongTask(Context context){
+	private DisplaySongCallback songcb;
+	public ManageSongTask(Context context , DisplaySongCallback songcb){
 		this.context = context;
+		this.songcb = songcb;
 	}
 	
 	@Override
@@ -40,10 +44,15 @@ public class ManageSongTask extends AsyncTask<String , String , String>{
 		if(result != null){
 			Gson gson = new Gson();
 			SerializedManageSongs mSongs = gson.fromJson(result, SerializedManageSongs.class);
-			Log.d(TAG, mSongs.status);
-			if(mSongs.status.equals("success")){
-				Log.d(TAG, mSongs.songs.size() + " ");
+			if(mSongs.status != null){
+				Log.d(TAG, " = " + mSongs.status + " = ");
+				if(mSongs.status.equals("success")){
+					songcb.displaySongs(mSongs.songs);
+					
+				}
 			}
+		}else{
+			
 		}
 		super.onPostExecute(result);
 	}

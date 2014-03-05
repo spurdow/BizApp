@@ -19,6 +19,11 @@ public class SlidingDashboard extends SlidingFragmentActivity {
         setTitle("BizApp");
         // set the dummy front view
         setContentView(R.layout.content_frame);
+        
+        ManageSongList mSongList = new ManageSongList();
+		this.getSupportFragmentManager().beginTransaction()
+		.replace(R.id.content_frame, mSongList).commit();
+        
         // set dummy back view
         setBehindContentView(R.layout.menu_frame);
         
@@ -39,10 +44,7 @@ public class SlidingDashboard extends SlidingFragmentActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         
         //
-        SerializedUser user = Utils.getUser(this);
-        ManageSongTask task = new ManageSongTask(this);
-        task.execute("0" , user.user_type+"", user.artist_id + "" , Utils.MANAGE_SONGS );
-        
+
         
     }
 
