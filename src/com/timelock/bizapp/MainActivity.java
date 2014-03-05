@@ -30,7 +30,7 @@ public class MainActivity extends Activity {
 		
 		setContentView(R.layout.activity_main);
 		SerializedUser user = Utils.getUser(this);
-		if(user.user_id > 0){
+		if(user != null ){
 			Intent i = new Intent(this , SlidingDashboard.class);
 			i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 			startActivity(i);

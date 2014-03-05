@@ -49,7 +49,7 @@ public class MenuList extends SherlockListFragment implements IImageDownload{
 		TextView fullname = (TextView) viewGroup.findViewById(R.id.txt_id_fullname);
 		
 		SerializedUser user = Utils.getUser(this.getActivity());
-		download(Utils.HOST +"/uploads/images/user_avatar/" + user.user_id + "." + user.user_image_ext , img);
+		download(user.getImagePath() , img);
 		fullname.setText(user.user_fname + " " + user.user_lname);
 		
 		getListView().addHeaderView(viewGroup);

@@ -31,6 +31,8 @@ public class Utils {
 	
 	public final static String LOGIN_URL = HOST + ANDROID_FOLDER + "/login.php";
 	
+	public final static String MANAGE_SONGS = HOST + ANDROID_FOLDER + "/manage_songs.php";
+	
 	public final static int USER = 0x01;
 	
 	public final static int ARTIST = 0x02;
@@ -125,6 +127,16 @@ public class Utils {
 	}
 	
 	/**
+	 * remove the user shared preferences to logout
+	 * @param context
+	 */
+	public static void removeUser(Context context){
+		SharedPreferences shared = getSharedPref(context);
+		SharedPreferences.Editor editor = shared.edit();
+		editor.remove("User");
+		editor.commit();
+	}
+	/**
 	 * save user to shared prefernces
 	 * @param context
 	 * @param user
@@ -147,6 +159,7 @@ public class Utils {
 		Gson gson = new Gson();
 		String json = shared.getString("User", "");
 		SerializedUser user = gson.fromJson(json, SerializedUser.class);
+		if(user == null) return null;
 		return user;
 	}
 	/**
