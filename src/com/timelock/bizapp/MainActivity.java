@@ -1,5 +1,6 @@
 package com.timelock.bizapp;
 
+import com.timelock.serializedentity.SerializedUser;
 import com.timelock.task.LoginTask;
 import com.timelock.utils.AfterTextChanged;
 import com.timelock.utils.Utils;
@@ -28,6 +29,12 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		
 		setContentView(R.layout.activity_main);
+		SerializedUser user = Utils.getUser(this);
+		if(user.user_id > 0){
+			Intent i = new Intent(this , SlidingDashboard.class);
+			i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+			startActivity(i);
+		}
 		
 		txt_username = (EditText) findViewById(R.id.txt_username);
 		txt_password = (EditText) findViewById(R.id.txt_password);

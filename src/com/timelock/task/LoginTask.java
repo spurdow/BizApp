@@ -49,10 +49,10 @@ public class LoginTask extends AsyncTask<String , String , String>{
 				Log.d(TAG, user.toString());
 				
 				Intent i = new Intent(context , SlidingDashboard.class);
-				i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+				i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 				context.startActivity(i);
 			}
-			Log.d(TAG, sLogin.status + " ");
+			
 		}
 		
 		dialog.dismiss();

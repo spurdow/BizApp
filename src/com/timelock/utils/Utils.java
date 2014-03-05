@@ -33,7 +33,7 @@ public class Utils {
 	
 	public final static int USER = 0x01;
 	
-	public final static int ARTIST = 0x03;
+	public final static int ARTIST = 0x02;
 	
 	public final static int MANAGE_SONGS_ID = 0x00;
 	public final static int POST_COMMENT_ID = 0x01;
