@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- File created by the Android Action Bar Style Generator
+
+     Copyright (C) 2011 The Android Open Source Project
+     Copyright (C) 2012 readyState Software Ltd
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources>
+
+    <style name="Theme.Bizapp" parent="@style/Theme.Sherlock.Light.DarkActionBar">
+        <item name="actionBarItemBackground">@drawable/selectable_background_bizapp</item>
+        <item name="popupMenuStyle">@style/PopupMenu.Bizapp</item>
+        <item name="dropDownListViewStyle">@style/DropDownListView.Bizapp</item>
+        <item name="actionBarTabStyle">@style/ActionBarTabStyle.Bizapp</item>
+        <item name="actionDropDownStyle">@style/DropDownNav.Bizapp</item>
+        <item name="actionBarStyle">@style/ActionBar.Solid.Bizapp</item>
+        <item name="actionModeBackground">@drawable/cab_background_top_bizapp</item>
+        <item name="actionModeSplitBackground">@drawable/cab_background_bottom_bizapp</item>
+        <item name="actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Bizapp</item>
+
+                <!-- Light.DarkActionBar specific -->
+        <item name="actionBarWidgetTheme">@style/Theme.Bizapp.Widget</item>
+
+    </style>
+
+    <style name="ActionBar.Solid.Bizapp" parent="@style/Widget.Sherlock.Light.ActionBar.Solid.Inverse">
+        <item name="background">@drawable/ab_solid_bizapp</item>
+        <item name="backgroundStacked">@drawable/ab_stacked_solid_bizapp</item>
+        <item name="backgroundSplit">@drawable/ab_bottom_solid_bizapp</item>
+        <item name="progressBarStyle">@style/ProgressBar.Bizapp</item>
+    </style>
+
+    <style name="ActionBar.Transparent.Bizapp" parent="@style/Widget.Sherlock.ActionBar">
+        <item name="background">@drawable/ab_transparent_bizapp</item>
+        <item name="progressBarStyle">@style/ProgressBar.Bizapp</item>
+    </style>
+	
+    <style name="PopupMenu.Bizapp" parent="@style/Widget.Sherlock.ListPopupWindow">	
+        <item name="android:popupBackground">@drawable/menu_dropdown_panel_bizapp</item>	
+    </style>
+	
+    <style name="DropDownListView.Bizapp" parent="@style/Widget.Sherlock.ListView.DropDown">
+        <item name="android:listSelector">@drawable/selectable_background_bizapp</item>
+    </style>
+
+    <style name="ActionBarTabStyle.Bizapp" parent="@style/Widget.Sherlock.ActionBar.TabView">
+        <item name="android:background">@drawable/tab_indicator_ab_bizapp</item>
+    </style>
+	
+    <style name="DropDownNav.Bizapp" parent="@style/Widget.Sherlock.Spinner.DropDown.ActionBar">
+        <item name="android:background">@drawable/spinner_background_ab_bizapp</item>
+        <item name="android:popupBackground">@drawable/menu_dropdown_panel_bizapp</item>
+        <item name="android:dropDownSelector">@drawable/selectable_background_bizapp</item>
+    </style>
+    
+    <style name="ProgressBar.Bizapp" parent="@style/Widget.Sherlock.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/progress_horizontal_bizapp</item>
+    </style>
+    
+    <style name="ActionButton.CloseMode.Bizapp" parent="@style/Widget.Sherlock.ActionButton.CloseMode">
+        <item name="android:background">@drawable/btn_cab_done_bizapp</item>
+    </style>
+    
+    <!-- this style is only referenced in a Light.DarkActionBar based theme -->
+    <style name="Theme.Bizapp.Widget" parent="@style/Theme.Sherlock">
+        <item name="popupMenuStyle">@style/PopupMenu.Bizapp</item>
+        <item name="dropDownListViewStyle">@style/DropDownListView.Bizapp</item>
+    </style>
+
+</resources>
