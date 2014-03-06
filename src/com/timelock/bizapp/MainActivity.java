@@ -78,7 +78,7 @@ public class MainActivity extends SherlockActivity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				LoginTask lTask = new LoginTask(MainActivity.this);
-				lTask.execute("login" , txt_username.getText().toString() , txt_password.getText().toString() , Utils.LOGIN_URL);
+				lTask.execute("login" , txt_username.getText().toString() , txt_password.getText().toString() , Utils.HOST + Utils.ANDROID_FOLDER + "/login.php");
 			}
 			
 		});
@@ -119,7 +119,7 @@ public class MainActivity extends SherlockActivity {
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
 					String ip = host.getText().toString();
-					Utils.HOST = ip;
+					Utils.HOST = "http://" + ip;
 					alert.dismiss();
 				}
 				

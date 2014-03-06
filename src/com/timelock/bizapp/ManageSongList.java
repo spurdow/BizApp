@@ -50,7 +50,7 @@ public class ManageSongList extends SherlockListFragment implements DisplaySongC
 		
         SerializedUser user = Utils.getUser(this.getActivity());
         ManageSongTask task = new ManageSongTask(this.getActivity() , this);
-        task.execute("0" , user.user_type+"", user.artist_id + "" , Utils.MANAGE_SONGS );
+        task.execute("0" , user.user_type+"", user.artist_id + "" , Utils.HOST + Utils.ANDROID_FOLDER + "/manage_songs.php");
         
 		
 	}
