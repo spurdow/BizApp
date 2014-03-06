@@ -262,8 +262,21 @@ public class MediaBizPlayer extends SherlockActivity implements OnCompletionList
 			
 			@Override
 			public void onClick(View arg0) {
-				//Intent i = new Intent(getApplicationContext(), PlayListActivity.class);
-				//startActivityForResult(i, 100);			
+				/*
+				 *  safe handle to remove callbacks
+				 *  and stops the playlist
+				 */
+				mHandler.removeCallbacks(mUpdateTimeTask);
+				if(mp.isLooping()){
+					mp.setLooping(false);
+				}
+				
+				if(mp.isPlaying()){
+					mp.stop();
+				}
+				
+				mp.release();
+				finish();			
 			}
 		});
 	}
