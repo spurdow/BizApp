@@ -1,5 +1,6 @@
 package com.timelock.bizapp;
 
+import com.actionbarsherlock.app.SherlockActivity;
 import com.timelock.serializedentity.SerializedUser;
 import com.timelock.task.LoginTask;
 import com.timelock.utils.AfterTextChanged;
@@ -7,16 +8,19 @@ import com.timelock.utils.Utils;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.text.Editable;
+import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends Activity {
+public class MainActivity extends SherlockActivity {
 
 		
 	private boolean errors = false;
@@ -82,11 +86,54 @@ public class MainActivity extends Activity {
 		
 	}
 
+	
+	
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
+	public boolean onCreateOptionsMenu(com.actionbarsherlock.view.Menu menu) {
+		// TODO Auto-generated method stub
+		getSupportMenuInflater().inflate(R.menu.main, menu);
+		return super.onCreateOptionsMenu(menu);
 	}
+
+
+
+	@Override
+	public boolean onOptionsItemSelected(
+			com.actionbarsherlock.view.MenuItem item) {
+		// TODO Auto-generated method stub
+		switch(item.getItemId()){
+		case R.id.action_settings : 
+			View view = LayoutInflater.from(this).inflate(R.layout.input_host, null);
+			
+			final EditText host = (EditText) view.findViewById(R.id.txt_host);
+			Button save = (Button) view.findViewById(R.id.btn_save);
+			
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+			builder.setTitle("Input host here");
+			builder.setView(view);
+			
+			
+			save.setOnClickListener(new OnClickListener(){
+
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					String ip = host.getText().toString();
+					Utils.HOST = ip;
+				}
+				
+			});
+			AlertDialog alert = builder.create();
+			alert.show();
+
+					
+			break;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+
+
+	
+	
 
 }

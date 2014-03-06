@@ -25,7 +25,7 @@ import com.timelock.serializedentity.SerializedUser;
 
 public class Utils {
 
-	public final static String HOST = "http://192.168.254.103";
+	public  static String HOST = "http://192.168.254.103";
 	
 	public final static String ANDROID_FOLDER = "/android";
 	
