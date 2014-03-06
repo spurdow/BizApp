@@ -44,7 +44,7 @@ public class ManageSongTask extends AsyncTask<String , String , String>{
 		if(result != null){
 			Gson gson = new Gson();
 			SerializedManageSongs mSongs = gson.fromJson(result, SerializedManageSongs.class);
-			if(mSongs.status != null){
+			if(mSongs != null){
 				Log.d(TAG, " = " + mSongs.status + " = ");
 				if(mSongs.status.equals("success")){
 					songcb.displaySongs(mSongs.songs);

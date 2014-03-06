@@ -25,6 +25,7 @@
             </intent-filter>
         </activity>
         <activity android:name="SlidingDashboard" android:theme="@style/Theme.Bizapp" android:label="Dashboard"></activity>
+        <activity android:theme="@style/Theme.Bizapp" android:name="MediaBizPlayer"></activity>
     </application>
 
 </manifest>
