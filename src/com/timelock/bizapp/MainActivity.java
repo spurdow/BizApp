@@ -108,6 +108,8 @@ public class MainActivity extends SherlockActivity {
 			final EditText host = (EditText) view.findViewById(R.id.txt_host);
 			Button save = (Button) view.findViewById(R.id.btn_save);
 			
+			host.setText(Utils.HOST);
+			
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
 			builder.setTitle("Input host here");
 			builder.setView(view);
@@ -119,7 +121,7 @@ public class MainActivity extends SherlockActivity {
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
 					String ip = host.getText().toString();
-					Utils.HOST = "http://" + ip;
+					Utils.HOST =  ip;
 					alert.dismiss();
 				}
 				
