@@ -112,7 +112,7 @@ public class MainActivity extends SherlockActivity {
 			builder.setTitle("Input host here");
 			builder.setView(view);
 			
-			
+			final AlertDialog alert = builder.create();
 			save.setOnClickListener(new OnClickListener(){
 
 				@Override
@@ -120,10 +120,11 @@ public class MainActivity extends SherlockActivity {
 					// TODO Auto-generated method stub
 					String ip = host.getText().toString();
 					Utils.HOST = ip;
+					alert.dismiss();
 				}
 				
 			});
-			AlertDialog alert = builder.create();
+			
 			alert.show();
 
 					
